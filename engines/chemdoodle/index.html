@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+body{margin:0;padding:0;overflow:hidden;}
+html, body{height:100%;}
+</style>
+<script type="text/javascript" src="ChemDoodleWeb.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+if (window.parent && window.parent.cifdata){
+    var cif = ChemDoodle.readCIF(window.parent.cifdata, 1, 1, 1);
+    var crystalTransformer = new ChemDoodle.TransformCanvas3D('ribbonTransformer', window.innerWidth, window.innerHeight);
+    crystalTransformer.specs.set3DRepresentation('Ball and Stick');
+    crystalTransformer.specs.backgroundColor = '#ffffff';
+    crystalTransformer.specs.projectionPerspective_3D = false;
+    crystalTransformer.specs.atoms_displayLabels_3D = true;
+    crystalTransformer.specs.crystals_unitCellLineWidth = 1;
+    crystalTransformer.specs.shapes_color = 'black';
+    crystalTransformer.specs.shapes_lineWidth = 1;
+    crystalTransformer.loadContent([cif.molecule], [cif.unitCell]);
+} else alert('Incorrect usage!');
+</script>
+</body>
+</html>

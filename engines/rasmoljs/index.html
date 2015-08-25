@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+body{margin:0;padding:0;overflow:hidden;}
+html, body{height:100%;}
+</style>
+</head>
+<body>
+<div id="content">
+<canvas style="position:absolute;z-index:1;margin:0;padding:0;" class="emscripten" id="canvas" tabindex="0"></canvas>
+</div>
+<script type='text/javascript'>
+//window.console = window.console || { log: function(){} };
+var handleEcho = function(message) {
+    console.log(message);
+};
+var Module = {
+    TOTAL_MEMORY: 32777216,
+    onRuntimeInitialized: function(){
+        HandleCommand = Module.cwrap('HandleCommand', "void", ["string"]);
+        if (window.parent && window.parent.cifdata){
+            setTimeout(function(){
+            FS.writeFile('data.cif', window.parent.cifdata);
+            HandleCommand("zap");
+            HandleCommand("background white");
+            HandleCommand("load cif data.cif");
+            HandleCommand("zoom 150");
+            HandleCommand("set axes on");
+            HandleCommand("set unitcell");
+            HandleCommand("spacefill 150");
+            HandleCommand("wireframe 25");
+            HandleCommand("label %e");
+            HandleCommand("colour axes black");
+            HandleCommand("colour labels black");
+            //Module.ccall('SetProfileOn', 'void', []);
+            }, 0);
+        }
+    },
+    keyboardListeningElement: document.getElementById('canvas'),
+    preRun: [],
+    postRun: [],
+    print: function(text){
+        var text = Array.prototype.slice.call(arguments).join(' ');
+        console.log(text);
+    },
+    printErr: function(text){ this.print(text) },
+    canvas: (function() {
+        var canvas = document.getElementById('canvas');
+
+        // As a default initial behavior, pop up an alert when webgl context is lost. To make your
+        // application robust, you may want to override this behavior before shipping!
+        // See http://www.khronos.org/registry/webgl/specs/latest/1.0/#5.15.2
+        canvas.addEventListener("webglcontextlost", function(e) { alert('WebGL context lost. You will need to reload the page.'); e.preventDefault(); }, false);
+
+        return canvas;
+    })(),
+    setStatus: function(text){ this.print(text) },
+    totalDependencies: 0,
+    monitorRunDependencies: function(text){ this.print(text) },
+    logReadFiles: function(text){ this.print(text) },
+};
+Module.setStatus('Downloading...');
+window.onerror = function(event) {
+    // TODO: do not warn on ok events like simulating an infinite loop or exitStatus
+    Module.setStatus('Exception thrown, see JavaScript console');
+    Module.setStatus = function(text) {
+        if (text) Module.printErr('[post-exception status] ' + text);
+    };
+};
+</script>
+<script async type="text/javascript" src="rassdl.js"></script>
+</body>
+</html>

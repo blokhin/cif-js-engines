@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+#ready, #loader {display:none;position:absolute;left:0;top:0;right:0;bottom:0;height:auto;margin:100px;text-align:center;}
+p{line-height:3em;}
+</style>
+</head>
+<body>
+    <div id="ready">
+        <p>Please, choose the engine from above.</p>
+    </div>
+    <div id="loader">
+        <input type="file" id="fileapi" />
+        <p>The files are processed locally. No remote server is used.</p>
+    </div>
+<script type="text/javascript">
+var ready = document.getElementById('ready'), loader = document.getElementById('loader');
+
+function accomodate(result){
+    window.parent.cifdata = result.replace(/"/g, '\x22').replace(/'/g, '\x27');
+}
+
+if (window.File && window.FileReader && window.FileList && window.Blob){
+    loader.style.display = 'block';
+    var fileapi = document.getElementById('fileapi');
+    var reader = new FileReader();
+    fileapi.onchange = function(){
+        if (!this.files[0] || !this.files[0].size) return alert("Error: file cannot be read (unaccessible?)");
+        reader.readAsText(this.files[0]);
+    }
+    reader.onloadend = function(event){
+        window.accomodate(event.target.result);
+        ready.style.display = 'block';
+        loader.style.display = 'none';
+    }
+} else ready.style.display = 'block';
+
+var xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+xmlhttp.onreadystatechange = function(){
+    if (xmlhttp.readyState == 4){
+        if (xmlhttp.status == 200){
+            window.accomodate(xmlhttp.responseText);
+        } else alert("Error: cannot load sample data!");
+    }
+}
+xmlhttp.open("GET", '../data/sample.cif');
+xmlhttp.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+xmlhttp.send(1);
+</script>
+</body>
+</html>

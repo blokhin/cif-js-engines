@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+body{margin:0;padding:0;overflow:hidden;}
+html, body{height:100%;}
+</style>
+</head>
+<body>
+<script type="text/javascript" src="JSmol.min.js"></script>
+<script type="text/javascript">
+var Info = {
+    width: window.innerWidth,
+    height: window.innerHeight,
+    use: "HTML5"
+}
+jmolApplet0 = Jmol.getApplet("jmolApplet0", Info);
+if (window.parent && window.parent.cifdata){
+    Jmol.script(jmolApplet0,
+    'background white; load data "samplecifdata"\n' + window.parent.cifdata + '\nend "samplecifdata" {1 1 1}; select *; label %e; wireframe 0.07; set debug on;');
+}
+</script>
+</body>
+</html>

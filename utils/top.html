@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+body{margin:0;padding:0;}
+h1{text-align:center;line-height:0.8;margin:0.5em;}
+ul{text-align:center;}
+ul li{list-style:none;display:inline-block;margin:0 5px;}
+a{color:#000;}
+a#fileapi{display:none;color:#bbbbbb;}
+</style>
+</head>
+<body>
+<h1>In-browser plugin-free CIF visualization: comparison of open-source engines</h1>
+<ul>
+    <li><a href="fileapi.html" target="main" id="fileapi">New CIF</a></li>
+    <li><a href="../engines/jsmol/" target="main">JSMol</a></li>
+    <li><a href="../engines/chemdoodle/" target="main">ChemDoodleWeb</a></li>
+    <li><a href="../engines/rasmoljs/index.html" target="main">RasmolJs</a></li>
+    <li><a href="../engines/player.html/player.html" target="main">Player.html</a></li>
+</ul>
+<script type="text/javascript">
+if (window.File && window.FileReader && window.FileList && window.Blob){
+    var lk = document.getElementById('fileapi');
+    lk.style.display = 'block';
+}
+</script>
+</body>
+</html>
