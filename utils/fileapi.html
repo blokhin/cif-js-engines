@@ -14,7 +14,7 @@ p{line-height:3em;}
     </div>
     <div id="loader">
         <input type="file" id="fileapi" />
-        <p>The files are processed locally. No remote server is used.</p>
+        <p>The files are processed locally in browser. No remote server is used.</p>
     </div>
 <script type="text/javascript">
 var ready = document.getElementById('ready'), loader = document.getElementById('loader');
@@ -46,9 +46,11 @@ xmlhttp.onreadystatechange = function(){
         } else alert("Error: cannot load sample data!");
     }
 }
-xmlhttp.open("GET", '../data/sample.cif');
-xmlhttp.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
-xmlhttp.send(1);
+if (window.location.protocol.indexOf('http') === 0){
+    xmlhttp.open("GET", '../data/sample.cif');
+    xmlhttp.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+    xmlhttp.send(1);
+} else alert('Error: this page must be served by a web server');
 </script>
 </body>
 </html>
