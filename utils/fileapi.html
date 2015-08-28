@@ -47,7 +47,7 @@ xmlhttp.onreadystatechange = function(){
     }
 }
 if (window.location.protocol.indexOf('http') === 0){
-    xmlhttp.open("GET", '../data/sample.cif');
+    xmlhttp.open("GET", '../data/adsorption.cif');
     xmlhttp.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
     xmlhttp.send(1);
 } else alert('Error: this page must be served by a web server');
