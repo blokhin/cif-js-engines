@@ -12,3 +12,4 @@ Some web-server is required to run the web-app (however no server-side rendering
 ```
 python -m SimpleHTTPServer
 ```
+or, alternatively, see online as [GitHub Pages](http://blokhin.github.io/cif-js-engines).
