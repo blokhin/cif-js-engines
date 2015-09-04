@@ -13,3 +13,5 @@ Some web-server is required to run the web-app (however no server-side rendering
 python -m SimpleHTTPServer
 ```
 or, alternatively, see online as [GitHub Pages](http://blokhin.github.io/cif-js-engines).
+
+![JavaScript-only CIF display](http://blokhin.github.io/utils/cheminformatics.png "JavaScript-only CIF rendering")

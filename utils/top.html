@@ -11,7 +11,65 @@ ul{text-align:center;}
 ul li{list-style:none;display:inline-block;margin:0 5px;}
 a{color:#000;}
 a#fileapi{display:none;color:#bbbbbb;}
+
+/* "Fork me on GitHub" CSS ribbon v0.1.1 */
+.github-fork-ribbon {
+position: absolute;
+padding: 2px 0;
+background-color: #c00;
+background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.15)));
+background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+-webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+-moz-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+font: 500 9px "Helvetica Neue", Helvetica, Arial, sans-serif;
+z-index: 9999;
+pointer-events: auto;
+}
+.github-fork-ribbon a,
+.github-fork-ribbon a:hover {
+color: #fff;
+text-decoration: none;
+text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
+text-align: center;
+width: 100px;
+line-height: 12px;
+display: inline-block;
+padding: 2px 0;
+border-width: 1px 0;
+border-style: dotted;
+border-color: #fff;
+border-color: rgba(255, 255, 255, 0.7);
+}
+.github-fork-ribbon-wrapper {
+width: 100px;
+height: 100px;
+position: absolute;
+overflow: hidden;
+top: 0;
+z-index: 9999;
+pointer-events: none;
+}
+.github-fork-ribbon-wrapper.right {
+right: 0;
+}
+.github-fork-ribbon-wrapper.right .github-fork-ribbon {
+top: 16px;
+right: -22px;
+-webkit-transform: rotate(45deg);
+-moz-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+-o-transform: rotate(45deg);
+transform: rotate(45deg);
+}
 </style>
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.ie.min.css" />
+<![endif]-->
 </head>
 <body>
 <h1>In-browser plugin-free CIF visualization: comparison of open-source engines</h1>
@@ -22,6 +80,11 @@ a#fileapi{display:none;color:#bbbbbb;}
     <li><a href="../engines/rasmoljs/index.html" target="main">RasmolJs</a></li>
     <li><a href="../engines/player.html/player.html" target="main">Player.html</a></li>
 </ul>
+<div class="github-fork-ribbon-wrapper right">
+    <div class="github-fork-ribbon">
+        <a href="https://github.com/blokhin/cif-js-engines" target="_top">See on GitHub</a>
+    </div>
+</div>
 <script type="text/javascript">
 if (window.File && window.FileReader && window.FileList && window.Blob){
     var lk = document.getElementById('fileapi');
