@@ -14,4 +14,4 @@ python -m SimpleHTTPServer
 ```
 or, alternatively, see online as [GitHub Pages](http://blokhin.github.io/cif-js-engines).
 
-![JavaScript-only CIF display](http://blokhin.github.io/utils/cheminformatics.png "JavaScript-only CIF rendering")
+![JavaScript-only CIF display](https://raw.githubusercontent.com/blokhin/cif-js-engines/master/utils/cheminformatics.png "JavaScript CIF rendering")
