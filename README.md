@@ -12,6 +12,6 @@ Some web-server is required to run the web-app (however no server-side rendering
 ```
 python -m SimpleHTTPServer
 ```
-or, alternatively, see online as [GitHub Pages](http://blokhin.github.io/cif-js-engines).
+or, alternatively, see online as [GitHub Pages](http://blokhin.github.io/cif-js-engines). Also a [detailed blog post](https://blog.tilde.pro/in-browser-plugin-free-cif-visualization-comparison-of-open-source-engines-a3d0b4098660) is available.
 
 ![JavaScript-only CIF display](https://raw.githubusercontent.com/blokhin/cif-js-engines/gh-pages/utils/cheminformatics.png "JavaScript CIF rendering")
