@@ -1,7 +1,7 @@
 In-browser plugin-free CIF visualization: comparison of open-source engines
 ======
 
-This utility web-app bundles four available open-source pure-JavaScript engines for in-browser rendering of [crystallographic information files (CIF)](https://en.wikipedia.org/wiki/Crystallographic_Information_File), for demonstration purposes:
+This utility web-app bundles four available open-source pure-JavaScript engines for in-browser rendering of arbitrary [crystallographic information files (CIF)](https://en.wikipedia.org/wiki/Crystallographic_Information_File), for demonstration purposes:
 
 * [JSmol, part of Jmol](http://www.jmol.org) (LGPL license)
 * [ChemDoodle Web Components library](http://web.chemdoodle.com) (GNU General Public License version 3)
