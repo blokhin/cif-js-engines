@@ -15,3 +15,8 @@ python -m SimpleHTTPServer
 or, alternatively, see online as [GitHub Pages](http://blokhin.github.io/cif-js-engines). Also a [detailed blog post](https://blog.tilde.pro/in-browser-plugin-free-cif-visualization-comparison-of-open-source-engines-a3d0b4098660) is available.
 
 ![JavaScript-only CIF display](https://raw.githubusercontent.com/blokhin/cif-js-engines/gh-pages/utils/cheminformatics.png "JavaScript CIF rendering")
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fblokhin%2Fcif-js-engines.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fblokhin%2Fcif-js-engines?ref=badge_shield)
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fblokhin%2Fcif-js-engines.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fblokhin%2Fcif-js-engines?ref=badge_large)
